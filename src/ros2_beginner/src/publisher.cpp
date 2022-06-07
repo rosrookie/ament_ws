@@ -19,12 +19,6 @@ MinimalPublisher::MinimalPublisher() : Node("publisher"), count_(0) {
   RCLCPP_INFO(this->get_logger(), "Constructor Initalized.");
 }
 
-/**
- * @description: Publisher time function. Every 5s publish a string message.
- * @param {None}
- * @return {None}
- */
-
 void MinimalPublisher::timer_callback() {
   auto message = std_msgs::msg::String();
   message.data = "Hello, world!" + std::to_string(count_++);
