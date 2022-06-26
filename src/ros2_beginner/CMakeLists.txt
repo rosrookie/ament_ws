@@ -19,6 +19,10 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(ros2_beginner REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
+
 
 include_directories(
   include
@@ -36,14 +40,36 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/Person.msg"
+  "srv/AddTwoInts.srv"
+)
+
 add_executable(publisher src/publisher.cpp)
 ament_target_dependencies(publisher rclcpp std_msgs)
 
 add_executable(subscriber src/subscriber.cpp)
 ament_target_dependencies(subscriber rclcpp std_msgs)
 
+add_executable(server_pop src/server_pop.cpp)
+ament_target_dependencies(server_pop rclcpp std_msgs ros2_beginner)
+
+add_executable(client_pop src/client_pop.cpp)
+ament_target_dependencies(client_pop rclcpp std_msgs ros2_beginner)
+
+add_executable(parameter_node src/cpp_parameters_node.cpp)
+ament_target_dependencies(parameter_node rclcpp)
+
 install(TARGETS
   publisher
   subscriber
+  server_pop
+  client_pop
+  parameter_node
   DESTINATION lib/${PROJECT_NAME})
+  
+install(
+    DIRECTORY launch
+    DESTINATION share/${PROJECT_NAME}
+  )
 ament_package()
