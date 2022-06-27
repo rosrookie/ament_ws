@@ -22,10 +22,16 @@ class MinimalPublisher : public rclcpp::Node {
   ~MinimalPublisher() = default;
 
  private:
-  void timer_callback();
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr str_publisher_;
   size_t count_;
+
+  /**
+   * @description: Publisher time function. Every 5s publish a string message.
+   * @param {None}
+   * @return {None}
+   */
+  void timer_callback();
 };
 
 class MinimalSubscriber : public rclcpp::Node {
@@ -34,6 +40,12 @@ class MinimalSubscriber : public rclcpp::Node {
   ~MinimalSubscriber() = default;
 
  private:
-  void topic_callback(const std_msgs::msg::String::SharedPtr msg) const;
   rclcpp::Subscription<std_msgs::msg::String>::SharedPtr str_subscriber_;
+
+  /**
+   * @description: Receive String message and put it on the screen.
+   * @param {msg}
+   * @return {None}
+   */
+  void topic_callback(const std_msgs::msg::String::SharedPtr msg) const;
 };

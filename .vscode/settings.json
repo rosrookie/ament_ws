@@ -20,6 +20,12 @@
         "param": "", // param 开启函数参数自动提取 需要将光标放在函数行或者函数上方的空白行
         "return": "",
     },
+<<<<<<< HEAD
+=======
+    "cmake.configureOnOpen": false,
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+>>>>>>> a0953c482514c2f408bc5a85ba58401aaa5f413f
     "files.associations": {
         "chrono": "cpp"
     }

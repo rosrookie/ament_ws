@@ -2,10 +2,13 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>ros2_beginner</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="artorias@todo.todo">artorias</maintainer>
-  <license>TODO: License declaration</license>
+  <version>1.0.0</version>
+
+  <description>ROS2 beginner package by artorias </description>
+
+  <maintainer email="xjlongfeiyu@outlook.com"> artorias </maintainer>
+
+  <license>GPL3</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <buildtool_depend>rosidl_default_generators</buildtool_depend>

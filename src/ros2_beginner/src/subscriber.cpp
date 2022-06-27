@@ -17,12 +17,6 @@ MinimalSubscriber::MinimalSubscriber() : Node("subscrib") {
       "str_tpoic", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
 }
 
-/**
- * @description: Receive String message and put it on the screen.
- * @param {String message[std_msgs::msg::String]}
- * @return {None}
- */
-
 void MinimalSubscriber::topic_callback(
     const std_msgs::msg::String::SharedPtr msg) const {
   RCLCPP_INFO(this->get_logger(), "I recevied: %s messages.",
