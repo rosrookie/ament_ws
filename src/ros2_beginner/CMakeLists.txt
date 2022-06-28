@@ -67,13 +67,9 @@ install(TARGETS
   client_pop
   parameter_node
   DESTINATION lib/${PROJECT_NAME})
-<<<<<<< HEAD
   
 install(
     DIRECTORY launch
     DESTINATION share/${PROJECT_NAME}
   )
 ament_package()
-=======
-ament_package()
->>>>>>> a0953c482514c2f408bc5a85ba58401aaa5f413f
